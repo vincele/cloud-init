@@ -8,11 +8,11 @@ import shutil
 import tempfile
 
 from cloudinit import util
+from cloudinit.cmd.devel import read_cfg_paths
 
 LOG = logging.getLogger(__name__)
-_ROOT_TMPDIR = "/run/cloud-init/tmp"
+_ROOT_TMPDIR = os.path.join(read_cfg_paths().run_dir, 'tmp')
 _EXE_ROOT_TMPDIR = "/var/tmp/cloud-init"
-
 
 def get_tmp_ancestor(odir=None, needs_exe: bool = False):
     if odir is not None:
