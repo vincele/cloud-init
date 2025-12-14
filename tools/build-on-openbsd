@@ -13,6 +13,7 @@ depschecked=/tmp/c-i.dependencieschecked
 pkgs="
    bash
    dmidecode
+   meson
    py3-configobj
    py3-jinja2
    py3-jsonschema
@@ -39,8 +40,8 @@ else
     echo Successfully installed packages
     touch $depschecked
 
-    python3 setup.py build
-    python3 setup.py install -O1 --distro openbsd --skip-build --init-system sysvinit_openbsd
+    meson setup builddir -Dinit_system=sysvinit_openbsd
+    meson install -C builddir
 
     echo "Installation completed."
 
