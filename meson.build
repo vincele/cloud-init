@@ -285,7 +285,7 @@ install_data(
 )
 
 # Create expected packaging directory structure
-meson.add_install_script('sh', '-c', 'mkdir -p ${DESTDIR}/' + sysconfdir + '/cloud/clean.d')
+meson.add_install_script('sh', '-c', 'mkdir -p ' + sysconfdir + '/cloud/clean.d')
 
 # meson setup builddir -Dinit_system=systemd
 # meson test -C builddir -v
