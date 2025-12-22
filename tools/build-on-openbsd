@@ -44,9 +44,4 @@ else
     meson install -C builddir
 
     echo "Installation completed."
-
-    rcctl enable cloudinitlocal
-    rcctl enable cloudinit
-    rcctl enable cloudconfig
-    rcctl enable cloudfinal
 fi
