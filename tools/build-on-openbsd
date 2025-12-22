@@ -12,6 +12,7 @@ fi
 depschecked=/tmp/c-i.dependencieschecked
 pkgs="
    bash
+   bash-completion
    dmidecode
    meson
    py3-configobj
