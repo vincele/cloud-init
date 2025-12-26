@@ -10,20 +10,15 @@ fi
 
 # Check dependencies:
 depschecked=/tmp/c-i.dependencieschecked
+pypkgs="$(grep -v -e '^#' -e '^$' requirements.txt  | sed -e 's/pyyaml/yaml/' -e 's/^/py3-/g')"
 pkgs="
    bash
    bash-completion
    dmidecode
    meson
-   py3-configobj
-   py3-jinja2
-   py3-jsonschema
-   py3-jsonpatch
-   py3-oauthlib
-   py3-requests
-   py3-yaml
    sudo--
    wget
+   ${pypkgs}
 "
 
 [ -f $depschecked ] || echo "Installing the following packages: $pkgs"; output=$(pkg_add -zI $pkgs 2>&1)
